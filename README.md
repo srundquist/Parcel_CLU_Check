@@ -1,1 +1,4 @@
 # Parcel_CLU_Check
+You will need to run the ml-parcelid/notebooks/ParcelID_Production_RnD_Parameters_Search_and_Parcels_Viz.ipynb to get a parcel ID sample within a 3k buffer (or user defined buffer).
+You will need to create a CLU layer by grabing the state data (keep in mind if your AOI is along a state border you'll need to merge the state data). Then subset the CLUs for areas GTE 5 acres, and get only CLUs that are classified as agriculture (you'll need to run majority class on CDL ag mask). Then intersect CLUs with 3k buffer to grab only fields within the same parcel ID AOI.
+CLU state data can be found here - https://console.cloud.google.com/storage/browser/soren-test-multiregion/CLUdata;tab=objects?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&project=regrow-gee&prefix=&forceOnObjectsSortingFiltering=false
